@@ -1,6 +1,3 @@
-# Learning journal
-
-This file is an AI-generated learning scaffold. Complete the reflection sections in your own words based on what you actually did.
 
 ## Increment 1 Express foundation
 
@@ -39,3 +36,44 @@ GenerationReading must be an append-only history collection. Meter or inverter i
 The module REST API Design Guidelines white paper has not yet been supplied. Endpoint designs remain provisional until checked against it.
 
 The brief and rubric ask for CRUD while also requiring append-only readings and restricting devices to reading ingestion. Clarify which non-reading resources are writable and by which principal before implementing update/delete. Do not let devices or analyst users bypass the required write-read split.
+
+## Increment 2 MongoDB connection and Province
+
+Scope: the complete conceptual domain model, one Province schema, and database-first startup. See domain-model.md.
+
+### Decisions and reasons
+
+- Mongoose declares document structure, validation, and indexes explicitly.
+- Connect before opening the HTTP listener so startup does not accept requests before its required database connection succeeds.
+- Disable command buffering to expose disconnected operations clearly.
+- Keep connection configuration separate from model and HTTP code.
+- A unique database index prevents duplicate province codes. Mongoose validation alone cannot guarantee uniqueness.
+- Normalize codes to uppercase so WP and wp have one representation.
+- Keep credentials in .env and out of logged connection errors.
+- Treat /health as HTTP liveness; ongoing database readiness is a later operational feature.
+
+### Your own observations
+
+- Explain schema, model, document, and collection in your own words.
+- Why do we await connectDatabase() before app.listen()?
+- Why does Province not contain an array of districts?
+- Does unique: true perform a Mongoose validation check?
+- Why are code normalization and the database index both needed?
+- What did you personally review or change?
+
+## Increment 2a MongoDB Atlas
+
+User decision: use Atlas for database hosting. See atlas-setup.md.
+
+The initial local connection example and five-second timeout were replaced by Atlas configuration and a thirty-second server selection timeout. The Province model and domain relationships remain the same. Atlas database hosting and Express API hosting are separate responsibilities.
+
+### Your own observations
+
+- Explain the difference between an Atlas account, the database user, and future device/staff JWTs.
+- Why is the database user limited to slsea_solar_api?
+- What tradeoff does the longer timeout introduce?
+- What startup messages did you actually observe after entering your Atlas URI?
+
+## Restoration
+
+The assistant restored increments 2 and 2a after the user reported deleting files. Existing increment 1 notes were preserved. No student observations have been invented. The empty .env was populated with configuration names; Atlas credentials must be entered locally.

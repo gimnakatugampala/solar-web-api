@@ -1,6 +1,10 @@
 node_modules/
 .env
 .env.*
-!.env.example
+.env.example
 coverage/
 *.log
+docs/
+.env.example
+docs/ai-disclosure.md
+docs/learning-journal.md

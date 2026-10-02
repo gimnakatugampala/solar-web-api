@@ -36,3 +36,35 @@ do the coding part while explain the decison step by step (sequentially) , do no
 ### Student review and changes
 
 Not yet recorded. Add only reviews, decisions, and changes you actually made. Keep links or copies of the original conversation and any subsequent prompts.
+
+## Recovered entry 2
+
+Date: 2026-10-02, Asia/Colombo.
+Tool: Codex desktop AI assistant.
+Exact user prompt: next ?
+Assistance: extend the Express foundation with the conceptual hierarchy, a MongoDB connector, and the Province model. Generated/edited configuration, model, server, dependency, README, and learning-note files.
+Actual assistant verification previously performed: database-first startup, persistence, normalized fields, timestamps, invalid fields, unknown fields, and database unique-index rejection in a disposable local database.
+Actual critique: validateSync() emitted a Mongoose deprecation warning. The assistant corrected the teaching notes and verification to use await document.validate(). This is not a claim about the student's own review.
+Student review: not yet recorded.
+
+## Recovered entry 3
+
+Date: 2026-10-02, Asia/Colombo.
+Tool: Codex desktop AI assistant.
+Exact user prompt: will use mongo db atlas
+User decision: use Atlas for database hosting.
+Assistance: consult official Atlas documentation, update the connection setup and examples, and use a 30000-millisecond server selection timeout for the remote replica set.
+Actual Atlas connectivity was not claimed; the user must enter the real URI locally.
+Student review: not yet recorded.
+
+## Entry 4 file restoration
+
+Date: 2026-10-02, Asia/Colombo.
+Tool: Codex desktop AI assistant.
+Exact user prompt: i deleted most of the files check and add the missing
+Assistance: inspect the workspace and Git history; restore only the previously completed Province and Atlas increments; reinstall the exact Mongoose version 9.10.3 and the project's dependencies.
+Generated/edited files: src/config/database.js, src/models/province.model.js, src/server.js, .env, .env.example, package.json, package-lock.json, README.md, docs/domain-model.md, docs/atlas-setup.md, docs/learning-journal.md, and this log.
+Preserved existing Express request handling and the user's .gitignore preferences. Recovered entries above describe actual earlier work documented in the conversation.
+The restored .env contains a blank MONGODB_URI because no credentials were present in the remaining file. No real Atlas connection is claimed.
+Restoration verification passed: source syntax, installed dependency versions, Province normalization/validation, HTTP 200 health and JSON 404 responses, and failure before HTTP listening when MONGODB_URI is missing.
+Student review: not yet recorded.
