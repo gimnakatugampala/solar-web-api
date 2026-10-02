@@ -1,0 +1,17 @@
+{
+  "name": "slsea-solar-api",
+  "version": "0.1.0",
+  "private": true,
+  "description": "SLSEA solar generation coursework API developed in learning increments.",
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "node --env-file=.env --watch src/server.js",
+    "start": "node src/server.js"
+  },
+  "dependencies": {
+    "express": "5.2.1"
+  }
+}
